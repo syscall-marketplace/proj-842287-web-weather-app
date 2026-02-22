@@ -203,11 +203,73 @@ a {
 }
 
 /* ===========================
-   Component Imports
+   Weather-specific Iconography & Styling
    =========================== */
-@import './components/current-weather.css';
-@import './components/location-search.css';
-@import './components/weather-forecast.css';
+.weather-icon-sunny::before { content: '\2600'; }
+.weather-icon-cloudy::before { content: '\2601'; }
+.weather-icon-rainy::before { content: '\1F327'; }
+.weather-icon-snowy::before { content: '\2744'; }
+.weather-icon-stormy::before { content: '\26A1'; }
+.weather-icon-foggy::before { content: '\1F32B'; }
+
+.weather-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.weather-badge--good { color: var(--color-success); }
+.weather-badge--moderate { color: var(--color-warning); }
+.weather-badge--poor { color: var(--color-error); }
+
+.weather-card {
+  background: var(--color-surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.weather-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Glassmorphism surface for weather panels */
+.glass-surface {
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+/* ===========================
+   Skeleton / Loading Base
+   =========================== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 25%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
 
 /* ===========================
    Utility Classes
