@@ -1,0 +1,124 @@
+.location-search {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.location-search__input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 0 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.location-search__input-wrapper:focus-within {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.location-search__icon {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.location-search__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 10px;
+  font-size: 1rem;
+  color: #fff;
+  font-family: inherit;
+}
+
+.location-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.location-search__geo-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.location-search__geo-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.location-search__dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: rgba(30, 30, 50, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.location-search__dropdown--hidden {
+  display: none;
+}
+
+.location-search__suggestion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: #fff;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.location-search__suggestion:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.location-search__suggestion + .location-search__suggestion {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.location-search__suggestion-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.location-search__suggestion-detail {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 2px;
+}
+
+.location-search__loading,
+.location-search__empty,
+.location-search__error {
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.location-search__error {
+  color: #ff8a8a;
+}
